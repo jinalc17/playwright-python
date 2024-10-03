@@ -1,7 +1,11 @@
-#install pytest
+# Python Playwright with Pytest
+
+This project demonstrates how to use **pytest** for testing in a Python Playwright environment.
+
+## Installation
+
+Before running the tests, you need to install the required dependencies.
+
+### Install pytest
+```bash
 pip install pytest
-
-#run specific tests by providing the test file name or a test function’s name:
-
-pytest test_example.py
-pytest test_example.py::test_example
