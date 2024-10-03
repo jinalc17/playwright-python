@@ -1,0 +1,19 @@
+# Starter pipeline
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: |
+    python -m venv venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    pytest --junitxml=results.xml
+  displayName: 'Run Tests'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/results.xml'
